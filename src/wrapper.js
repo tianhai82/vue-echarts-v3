@@ -32,7 +32,7 @@ var ECHARTS_EVENTS = [
   'brushselected'
 ];
 
-exports = module.exports = function wrapECharts(ECharts, Resize) {
+exports = module.exports = function wrapECharts(ECharts, Resize, world) {
   return {
     name: 'IEcharts',
     props: {
@@ -165,6 +165,7 @@ exports = module.exports = function wrapECharts(ECharts, Resize) {
           var dom = that.$el;
           var instance = ECharts.getInstanceByDom(dom);
           if (!instance) {
+            ECharts.registerMap('world', world);
             instance = ECharts.init(dom, that.theme, that.initOpts);
           }
           instance.group = that.group;

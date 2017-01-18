@@ -10,7 +10,8 @@
   // import Resize from 'element-resize-event';
   import Resize from 'element-resize-detector';
   import Wrapper from './wrapper.js';
+  import world from './world.js';
 
-  const IEcharts = Wrapper(ECharts, Resize);
+  const IEcharts = Wrapper(ECharts, Resize, world);
   export default IEcharts;
 </script>
