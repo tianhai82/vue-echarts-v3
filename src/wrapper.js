@@ -165,8 +165,8 @@ exports = module.exports = function wrapECharts(ECharts, Resize, world) {
           var dom = that.$el;
           var instance = ECharts.getInstanceByDom(dom);
           if (!instance) {
-            ECharts.registerMap('world', world);
             instance = ECharts.init(dom, that.theme, that.initOpts);
+            ECharts.registerMap('world', world);
           }
           instance.group = that.group;
           that.instance = instance;
